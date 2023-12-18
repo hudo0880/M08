@@ -58,20 +58,19 @@
             border-radius: 4px;
         }
 
-        .nacionalidad-options {
-            display: flex;
+        input[type="email"] {
+            color: transparent;
         }
 
-        .nacionalidad-options label {
-            margin-right: 16px;
-        }
-
+        .nacionalidad-options,
         .idiomas-options {
             display: flex;
         }
 
+        .nacionalidad-options label,
         .idiomas-options label {
             margin-right: 16px;
+            margin-bottom: 8px;
         }
 
         button {
@@ -92,7 +91,7 @@
 
     <form action="#" method="post">
         <fieldset>
-            <legend class="estudios">Informacion Básica</legend>
+            <legend class="legend"><strong>Información Básica</strong></legend>
             <label for="nombreFB">Nombre </label>
             <input type="text" id="nombreFB" name="nombreFB" required>
 
@@ -100,17 +99,17 @@
             <input type="number" id="alturaFB" name="alturaFB" min="0" max="300" value="170" required>
 
             <label for="emailFB">Email </label>
-            <input type="email" id="emailFB" name="emailFB" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-
-            <label for="fechaNacimiento">Fecha de nacimiento: </label>
+            <input type="email" id="emailFB" name="emailFB" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="tuemail@dominio.com" required>
+            
+            <label for="fechaNacimiento">Fecha Nacimiento: </label>
             <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
         </fieldset>
 
         <fieldset>
-            <legend class="nacionalidad">Nacionalidad</legend>
+            <legend class="nacionalidad"><strong>Nacionalidad</strong></legend>
             <div class="nacionalidad-options">
                 <label for="espanola">
-                    <input type="radio" id="espanola" name="nacionalidad" value="Espanyola" required>Espanyola
+                    <input type="radio" id="espanola" name="nacionalidad" value="Espanyola" required>Española
                 </label>
 
                 <label for="comunitario">
@@ -124,7 +123,7 @@
         </fieldset>
 
         <fieldset>
-            <legend class="estudios">Estudios</legend>
+            <legend class="estudios"><strong>Estudios</strong></legend>
             <select id="estudios" name="estudios" required>
                 <option value="ESO">ESO</option>
                 <option value="GM">GM</option>
@@ -134,7 +133,7 @@
         </fieldset>
 
         <fieldset>
-            <legend class="idiomas">Idiomas</legend>
+            <legend class="idiomas"><strong>Idiomas</strong></legend>
             <div class="idiomas-options">
                 <label for="catalan">
                     <input type="checkbox" id="catalan" name="idiomas[]" value="Catalán">Catalán
