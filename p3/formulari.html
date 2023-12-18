@@ -34,6 +34,11 @@
             color: orange;
         }
 
+        legend.estudios {
+            font-style: italic;
+            color: green;
+        }
+
         legend.idiomas {
             font-style: italic;
             color: red;
@@ -51,6 +56,22 @@
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 4px;
+        }
+
+        .nacionalidad-options {
+            display: flex;
+        }
+
+        .nacionalidad-options label {
+            margin-right: 16px;
+        }
+
+        .idiomas-options {
+            display: flex;
+        }
+
+        .idiomas-options label {
+            margin-right: 16px;
         }
 
         button {
@@ -71,14 +92,39 @@
 
     <form action="#" method="post">
         <fieldset>
-            <legend>Formación Básica</legend>
-            <label for="nombre">Nombre: </label>
-            <input type="text" id="nombre" name="nombre" required>
+            <legend class="estudios">Informacion Básica</legend>
+            <label for="nombreFB">Nombre </label>
+            <input type="text" id="nombreFB" name="nombreFB" required>
 
-            <label for="edad">Edad: </label>
-            <input type="number" id="edad" name="edad" min="0" required>
+            <label for="alturaFB">Altura en centimetros </label>
+            <input type="number" id="alturaFB" name="alturaFB" min="0" max="300" value="170" required>
 
-            <label for="estudios">Estudios: </label>
+            <label for="emailFB">Email </label>
+            <input type="email" id="emailFB" name="emailFB" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+
+            <label for="fechaNacimiento">Fecha de nacimiento: </label>
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+        </fieldset>
+
+        <fieldset>
+            <legend class="nacionalidad">Nacionalidad</legend>
+            <div class="nacionalidad-options">
+                <label for="espanola">
+                    <input type="radio" id="espanola" name="nacionalidad" value="Espanyola" required>Espanyola
+                </label>
+
+                <label for="comunitario">
+                    <input type="radio" id="comunitario" name="nacionalidad" value="Comunitario(UE)" required>Comunitario (UE)
+                </label>
+
+                <label for="noComunitario">
+                    <input type="radio" id="noComunitario" name="nacionalidad" value="No comunitario" required>No comunitario
+                </label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend class="estudios">Estudios</legend>
             <select id="estudios" name="estudios" required>
                 <option value="ESO">ESO</option>
                 <option value="GM">GM</option>
@@ -88,18 +134,24 @@
         </fieldset>
 
         <fieldset>
-            <legend class="nacionalidad">Nacionalidad</legend>
-            <label for="altura">Altura: </label>
-            <input type="number" id="altura" name="altura" min="0" max="300" value="170" required>
-
-            <label for="email">Email: </label>
-            <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-        </fieldset>
-
-        <fieldset>
             <legend class="idiomas">Idiomas</legend>
-            <label for="idiomas">Idiomas que hablas: </label>
-            <input type="text" id="idiomas" name="idiomas" required>
+            <div class="idiomas-options">
+                <label for="catalan">
+                    <input type="checkbox" id="catalan" name="idiomas[]" value="Catalán">Catalán
+                </label>
+
+                <label for="castellano">
+                    <input type="checkbox" id="castellano" name="idiomas[]" value="Castellano">Castellano
+                </label>
+
+                <label for="ingles">
+                    <input type="checkbox" id="ingles" name="idiomas[]" value="Inglés">Inglés
+                </label>
+
+                <label for="chino">
+                    <input type="checkbox" id="chino" name="idiomas[]" value="Chino">Chino
+                </label>
+            </div>
         </fieldset>
 
         <button type="submit">Enviar</button>
