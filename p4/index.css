@@ -3,6 +3,7 @@ header {
 text-align: center;
 font-size: 100px;
 color: red ;
+font-family: open sans;
 
 }
 
@@ -17,7 +18,7 @@ color: red ;
   grid-template-areas:
     'header header header header header header'
     'menu main main main right right'
-    'menu footer footer footer footer footer';
+    'footer footer footer footer footer footer';
   gap: 10px;
   background-color: orange;
   padding: 10px;
@@ -30,3 +31,30 @@ color: red ;
   font-size: 30px;
 }
 
+
+menu {
+
+
+  font-size: 50px;
+  
+  
+  
+  }
+
+  #naruto {
+
+      float:left;
+
+  }
+#sulekbby {
+
+      border: 2px solid red;
+      border-radius: 50px 20px;
+  }
+
+
+.item2 p:hover {
+
+
+  background-color: red;
+}
